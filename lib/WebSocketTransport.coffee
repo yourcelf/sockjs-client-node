@@ -13,7 +13,7 @@ class WebSocketTransport extends EventEmitter
     @ws.on 'open', =>
     @readyState = WebSocketTransport.CONNECTING
   send:(m)->
-    @ws.send("[#{m}]")
+    @ws.send(JSON.stringify(m))
   close:->
     @ws.close()
   onData:(data)=>
