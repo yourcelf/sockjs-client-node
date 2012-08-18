@@ -1,11 +1,11 @@
 # SockJS Client Node
 
 Node client for [SockJS](https://github.com/sockjs). Currently, only
-the XHR Streaming transport is supported.
+the WebSocket transport is supported.
 
 ## Usage
 
-    var sjsc = require('sockjs-client');
+    var sjsc = require('sockjs-client-ws');
     var client = sjsc.create("http://localhost/sjsServer");
     client.on('connection', function () { // connection is established });
     client.on('data', function (msg) { // received some data });
