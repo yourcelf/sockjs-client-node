@@ -11,6 +11,8 @@ class WebSocketTransport extends EventEmitter
     @ws.on 'close', =>
       @emit 'close'
     @ws.on 'open', =>
+    @ws.on 'error', (error) =>
+      @emit 'error', error
     @readyState = WebSocketTransport.CONNECTING
   send:(m)->
     @ws.send(JSON.stringify(m))
